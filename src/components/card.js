@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Input from './input';
+import Content from './content';
 
 class Card extends Component {
 
@@ -30,7 +31,6 @@ class Card extends Component {
 
   handleInputChange(event) {
     this.setState({ [event.target.name]: event.target.value })
-    console.log(this.state);
   }
 
 
@@ -63,14 +63,7 @@ class Card extends Component {
         inputData.map(data => Input( (data), this.handleInputChange ))
       }
 
-      {/* <h1>{this.state.color}</h1>
-        { Input('Color', this.state.color, this.handleInputChange, 'color') }
-        <h1>{this.state.pluralNoun}</h1>
-        { Input('Plural Noun', this.state.pluralNoun, this.handleInputChange, 'pluralNoun') }
-        <h1>{this.state.adjectiveOne}</h1>
-        { Input('Adjective', this.state.adjectiveOne, this.handleInputChange, 'adjectiveOne') }
-        <h1>{this.state.celebOne}</h1>
-        { Input('Celebrity', this.state.celebOne, this.handleInputChange, 'celebOne') } */}
+      <Content data={this.state} />
 
       </div>
     )
